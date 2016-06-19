@@ -1,16 +1,132 @@
-<!DOCTYPE html>
+<uses-permission android:name="android.permission.CALL_PHONE"/>
 <html>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <head>
-</head>
-<body>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<style type="text/css">
+td{border: black 10px solid;}
+</style>
+</head>
+
+
+
+<script language=javascript>
+
+function inicio()
+{
+	var pieza=document.getElementById("comedor");
+	pieza.style.backgroundColor="#0000ff";
+	setTimeout('apagar()',50);
+}
+
+function apagar()
+{
+	var pieza=document.getElementById("comedor");
+	pieza.style.backgroundColor="#ff0000";
+	setTimeout('inicio()',50);
+}
+
+function inicio2()
+{
+	var pieza=document.getElementById("cocina");
+	pieza.style.backgroundColor="#0000ff";
+	setTimeout('apagar2()',50);
+}
+
+function apagar2()
+{
+	var pieza=document.getElementById("cocina");
+	pieza.style.backgroundColor="#ff0000";
+	setTimeout('inicio2()',50);
+}
+
+</script>
+
+
+
+<body>
 <div class="container">
-  <div class="jumbotron">
-    <h1>My First Bootstrap Page</h1>
-    <p>Resize this responsive page to see the effect!</p> 
-  </div>
+   <div class="row">
+   <div class= "col-3">
+    <table>
+		<tr>
+			<td id="pieza1"><img src= "pieza1.jpg" class="img-responsive" ></td>
+			<td id="patio"> <img src=  "patio.jpg"   class="img-responsive" ></td>
+			<td id="cocina"><img src= "cocina.jpg" class="img-responsive"></td>	
+		</tr>
+        <tr>
+		<td><img src="bano2.jpg" class="img-responsive" ></td>
+		<td><img src= "bano.jpg" class="img-responsive"></td>
+		<td><img src= "salacomedor.jpg" class="img-responsive" ></td>
+		</tr>
+		<tr>
+		<td id="pieza2"> <img src= "pieza3.jpg" class="img-responsive"></td>
+		<td id="pieza3" > <img src= "pieza2.jpg" class="img-responsive"></td>
+		<td  > <img src= "salaestar.jpg" class="img-responsive"></td>
+		</tr>
+	
+	</table>
+
+   </div>
+   <div class="col-2">
+
+	<button type="button" class="btn btn-danger">
+	<span class="glyphicon glyphicon-earphone"></span> Llamar a Emergencia</button>
+   </div>
+
+   </div>
+   
+
 </div>
 
+	<!--<table border="10">
+		<tr>
+			<td id="pieza1" > <img src= "pieza1.jpg" class="img-responsive" style="width:382px height=270px" >
+			
+			</td>
+			
+						<td id="patio"  > <img src= "patio.jpg" style="width:321px height=271px">
+			</td>
+			
+						<td id="cocina"  > <img src= "cocina.jpg" style="width:427px height=289px">
+			</td>
+			
+		</tr>
+		
+		<tr>
+			<td id="bano1"> <img class="pequena" src= "bano2.jpg" style="width:253px height:339px">
+			</td>
+			
+						<td id="bano2" > <img src= "bano.jpg" style="width:333px height:340">
+			</td>
+			
+						<td rowspan="2" id="comedor" > <img src= "salacomedor.jpg" style="width:423 height=719px">
+			</td>
+			
+		</tr>
+		
+		<tr>
+		
+			<td id="pieza2"> <img src= "pieza3.jpg" style="width:369px height=263px">
+			</td>
+			
+						<td id="pieza3" > <img src= "pieza2.jpg" style="width:3330px height=3400px">
+			
+		
+	</table></tr>-->
+
+
+
+	<input type="button" id="btn_inicio" onclick="inicio()" width="100px" style="border:none; background:transparent;"  /> 
+	<input type="button" id="btn_inicio2" onclick="inicio2()" width="100px" style="border:none; background:transparent;" /> 
+
+	<!--<a href ="tel:+569123456">Llamar</a>->
+	
 </body>
 </html>
