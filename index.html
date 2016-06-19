@@ -20,7 +20,8 @@ td{border: black 10px solid;}
 
 function inicio()
 {
-	var pieza=document.getElementById("comedor");
+	//var pieza=document.getElementById("comedor");
+	var pieza= document.images("comedor"
 	pieza.style.backgroundColor="#0000ff";
 	setTimeout('apagar()',50);
 }
@@ -51,17 +52,17 @@ function apagar2()
 
 
 <body>
-<div class="container">
+<div class="container table-responsive">
    <div class="row">
    <div class= "col-3">
-    <table>
+    <table class="table">
 		<tr>
-			<td id="pieza1"><img src= "pieza1.jpg" class="img-responsive" ></td>
+			<td ><img src= "pieza1.jpg" class="img-responsive" id="pieza1"></td>
 			<td id="patio"> <img src=  "patio.jpg"   class="img-responsive" ></td>
-			<td id="cocina"><img src= "cocina.jpg" class="img-responsive"></td>	
+			<td ><img src= "cocina.jpg" class="img-responsive" id="cocina"></td>	
 		</tr>
         <tr>
-		<td><img src="bano2.jpg" class="img-responsive" ></td>
+		<td><img src="bano2.jpg" class="img-responsive" id="comedor"></td>
 		<td><img src= "bano.jpg" class="img-responsive"></td>
 		<td><img src= "salacomedor.jpg" class="img-responsive" ></td>
 		</tr>
@@ -123,8 +124,8 @@ function apagar2()
 
 
 
-	<input type="button" id="btn_inicio" onclick="inicio()" width="100px" style="border:none; background:transparent;"  /> 
-	<input type="button" id="btn_inicio2" onclick="inicio2()" width="100px" style="border:none; background:transparent;" /> 
+	<input type="button" id="btn_inicio" onclick="inicio()" width="100px"> <!--tyle="border:none; background:transparent;"--> 
+	<input type="button" id="btn_inicio2" onclick="inicio2()" width="100px"><!-- style="border:none; background:transparent;"--> 
 
 	<!--<a href ="tel:+569123456">Llamar</a>->
 	
