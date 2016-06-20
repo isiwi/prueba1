@@ -9,32 +9,19 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<style type="text/css">
-.table-responsive {
-  min-height: .01%;
-  overflow-x: auto;
-}
-@media screen and (max-width: 767px) {
-  .table-responsive {
-    width: 100%;
-    margin-bottom: 15px;
-    overflow-y: hidden;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    border: 1px solid #ddd;       
-  }
-</style>
+
+
+<link href="footable.bootstrap.min.css" rel="stylesheet">
 </head>
 
-<script language=jQuery>
 
-</script>
 
 <script language=javascript>
 
 function inicio()
 {
-	//var pieza=document.getElementById("comedor");
-	var pieza= document.images("comedor"
+	var pieza=document.getElementById("comedor");
+	//var pieza= document.images("comedor")
 	pieza.style.backgroundColor="#0000ff";
 	setTimeout('apagar()',50);
 }
@@ -59,19 +46,25 @@ function apagar2()
 	pieza.style.backgroundColor="#ff0000";
 	setTimeout('inicio2()',50);
 }
-
+function parpadeo() {
+var imagen = document.images["pieza1"];
+imagen.style.visibility = (imagen.style.visibility == "visible") ? "hidden" : "visible";
+}
+function accion(){
+setInterval("parpadeo()", 500);
+}
 </script>
 
 
 
 <body>
-<div class="container table-responsive">
+<div class="container >
    <div class="row">
    <div class= "col-3">
-    <table class="table">
+    <table class="table table-striped" >
 		<tr>
 			<td ><img src= "pieza1.jpg" class="img-responsive" id="pieza1"></td>
-			<td id="patio"> <img src=  "patio.jpg"   class="img-responsive" ></td>
+			<td id="patio"> <img src=  "patio.jpg"   class="img-responsive" id="patio" ></td>
 			<td ><img src= "cocina.jpg" class="img-responsive" id="cocina"></td>	
 		</tr>
         <tr>
@@ -137,10 +130,40 @@ function apagar2()
 
 
 
-	<input type="button" id="btn_inicio" onclick="inicio()" width="100px"> <!--tyle="border:none; background:transparent;"--> 
+	<input type="button" id="btn_inicio" onclick="accion()" width="100px"> <!--tyle="border:none; background:transparent;"--> 
 	<input type="button" id="btn_inicio2" onclick="inicio2()" width="100px"><!-- style="border:none; background:transparent;"--> 
 
-	<!--<a href ="tel:+569123456">Llamar</a>->
+	<!--<a href ="tel:+569123456">Llamar</a>-->
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="docs/js/ie10-viewport-bug-workaround.js"></script>
+<!-- Add in any FooTable dependencies we may need -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
+<!-- Add in FooTable itself -->
+<script src="footable.js"></script>
+<!-- Initialize FooTable -->
+<script>
+	jQuery(function($){
+		$('.table').footable({
+			"paging": {
+				"enabled": true
+			},
+			"filtering": {
+				"enabled": true
+			},
+			"sorting": {
+				"enabled": true
+			},
+			"columns": $.get("docs/content/columns.json"),
+			"rows": $.get("docs/content/rows.json")
+		});
+	});
+</script>
+
+
 	
 </body>
 </html>
