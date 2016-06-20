@@ -58,10 +58,10 @@ setInterval("parpadeo()", 500);
 
 
 <body>
-<div class="container >
+<div class="container">
    <div class="row">
    <div class= "col-3">
-    <table class="table table-striped" >
+    <table class="footable">
 		<tr>
 			<td ><img src= "pieza1.jpg" class="img-responsive" id="pieza1"></td>
 			<td id="patio"> <img src=  "patio.jpg"   class="img-responsive" id="patio" ></td>
@@ -147,19 +147,12 @@ setInterval("parpadeo()", 500);
 <!-- Initialize FooTable -->
 <script>
 	jQuery(function($){
-		$('.table').footable({
-			"paging": {
-				"enabled": true
-			},
-			"filtering": {
-				"enabled": true
-			},
-			"sorting": {
-				"enabled": true
-			},
-			"columns": $.get("docs/content/columns.json"),
-			"rows": $.get("docs/content/rows.json")
-		});
+$('table').footable({
+  breakpoints: {
+    mamaBear: 1200,
+    babyBear: 600
+  }
+});
 	});
 </script>
 
