@@ -12,6 +12,8 @@
 
 
 <link href="footable.bootstrap.min.css" rel="stylesheet">
+
+<script src="footable.js"></script>
 </head>
 
 
@@ -61,18 +63,18 @@ setInterval("parpadeo()", 500);
 <div class="container">
    <div class="row">
    <div class= "col-3">
-    <table class="footable">
-		<tr>
+    <table class="table" data-expand-first="true">
+		<tr data-expanded="true">
 			<td ><img src= "pieza1.jpg" class="img-responsive" id="pieza1"></td>
 			<td id="patio"> <img src=  "patio.jpg"   class="img-responsive" id="patio" ></td>
 			<td ><img src= "cocina.jpg" class="img-responsive" id="cocina"></td>	
 		</tr>
-        <tr>
+        <tr data-expanded="true">
 		<td><img src="bano2.jpg" class="img-responsive" id="comedor"></td>
 		<td><img src= "bano.jpg" class="img-responsive"></td>
 		<td><img src= "salacomedor.jpg" class="img-responsive" ></td>
 		</tr>
-		<tr>
+		<tr data-expanded="true">
 		<td id="pieza2"> <img src= "pieza3.jpg" class="img-responsive"></td>
 		<td id="pieza3" > <img src= "pieza2.jpg" class="img-responsive"></td>
 		<td  > <img src= "salaestar.jpg" class="img-responsive"></td>
@@ -146,14 +148,7 @@ setInterval("parpadeo()", 500);
 <script src="footable.js"></script>
 <!-- Initialize FooTable -->
 <script>
-	jQuery(function($){
-$('table').footable({
-  breakpoints: {
-    mamaBear: 1200,
-    babyBear: 600
-  }
-});
-	});
+
 </script>
 
 
